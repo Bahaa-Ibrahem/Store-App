@@ -1,12 +1,26 @@
-
-/* Fonts */
+/* STC Fonts */
 @font-face {
-  font-family: "SFNS Regular";
+  font-family: "STC Light";
   font-display: swap;
-  src: url("/assets/fonts/SFNS Display Regular.ttf") format("truetype");
+  src: url("/assets/fonts/stc/light/STCForward-Light.ttf") format("truetype");
 }
 
-$font-regular: "SFNS Regular", sans-serif;
+@font-face {
+  font-family: "STC Regular";
+  font-display: swap;
+  src: url("/assets/fonts/stc/regular/STCForward-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "STC Bold";
+  font-display: swap;
+  src: url("/assets/fonts/stc/bold/STCForward-Bold.ttf") format("truetype");
+}
+
+/* STC Fonts */
+$font-light: "STC Light", sans-serif;
+$font-regular: "STC Regular", sans-serif;
+$font-bold: "STC Bold", sans-serif;
 
 .font-8 {
   font-size: .5rem !important;

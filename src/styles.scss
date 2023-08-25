@@ -33,11 +33,6 @@ $store-theme: mat.define-light-theme((
 // that you are using.
 @include mat.all-component-themes($store-theme);
 
-/* You can add global styles to this file, and also import other style files */
-
 html, body { height: 100%; }
-body { margin: 0; font-family: 'SFNS Regular'; }
-body * { font-family: 'SFNS Regular'; }
-
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { margin: 0; font-family: 'STC Regular'; }
+body * { font-family: 'STC Regular'; }

@@ -18,12 +18,6 @@ export class NavbarComponent implements OnInit {
     this.translationService.currentLanguage$.subscribe(currentLanguage => this.currentLang = currentLanguage);
   }
 
-  closeMenu() {
-    if (innerWidth <= 1280) {
-      this.collaped = false;
-    }
-  }
-
   changeLanguage() {
     this.translationService.changeLanguage();
   }

@@ -1,17 +1,30 @@
 <div class="header mb-3 mb-md-0">
     <div class="container py-4">
-        <div class="d-flex justify-content-between">
+        <div class="d-flex justify-content-between flex-wrap">
             <div class="px-0 d-flex align-items-center justify-content-start">
-               <img src="assets/images/logo/logo.svg" alt="">
+               <img class="logo" src="assets/images/logo/stc.png" alt="">
             </div>
 
             <div class="px-0 d-flex align-items-center justify-content-end">
-              <ul>
-                <li class="text-secondary font-15 clickable px-3 py-2">HOME</li>
-                <li class="text-secondary font-15 clickable px-3 py-2">ABOUT</li>
-                <li class="text-secondary font-15 clickable px-3 py-2">CONTACT</li>
-              </ul>
               <button [routerLink]="['/auth/login']" class="main-btn main font-15 border-radius-25 px-4">LOGIN</button>
+              <mat-list class="navbar-nav d-flex flex-column flex-xl-row align-items-center p-0" role="list">
+                <mat-list-item class="nav-item px-3" role="listitem" setRtl>
+                    <div class="wrapper text-white d-flex align-items-center">
+                        <span class="cursor-pointer text-dark d-flex justify-content-center align-items-center" (click)="changeLanguage()">
+                            <svg class="m-inline-end-2" xmlns="http://www.w3.org/2000/svg" width="24" viewBox="0 0 24 24">
+                                <g transform="translate(1.916667 1.916667)" stroke="#1D252D" stroke-width="2" fill="none" fill-rule="evenodd">
+                                    <path stroke-linecap="round" d="M.91666667 11.9166667H7.21875L11 15.724359v3.9839743" />
+                                    <path d="M3.66666667 2.75l4.125 4.125H12.375l3.2083333 3.2083333H19.25" stroke-linecap="square" />
+                                    <circle stroke-linecap="square" cx="10.0833333" cy="10.0833333" r="10.0833333" />
+                                </g>
+                            </svg>
+
+                            {{ currentLang === 'en' ? 'العربية' : 'English' }}
+                        </span>
+                    </div>
+                </mat-list-item>
+
+            </mat-list>
             </div>
         </div>
     </div>

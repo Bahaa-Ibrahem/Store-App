@@ -2,17 +2,15 @@
 
 .header {
     width: 100%;
+    height: 80px;
 
     .row {
         margin-left: initial;
         margin-right: initial;
-        height: 80px;
     }
 
-    .log {
-        display: block;
-        float: right;
-        width: 100px;
+    .logo {
+        width: 60px;
     }
 
     ul {
@@ -40,50 +38,6 @@
                     display: block;
                 }
             }
-        }
-    }
-
-    .sign-btn {
-        background-color: transparent;
-        border-color: #ccc;
-        color: #fff;
-    }
-
-    .lang {
-      margin-inline-end: 10px;
-    }
-
-    a {
-        padding: 8px;
-
-        button {
-            display: flex;
-            align-items: center;
-            line-height: 20px;
-            border: none;
-            background-color: transparent;
-
-            mat-icon {
-              color: #fff;
-            }
-
-            i {
-                color: rgba(0, 0, 0, 0.54);
-                margin-inline-end: 8px;
-                vertical-align: middle;
-            }
-
-            img {
-            width: 45px;
-            height: 45px;
-            }
-        }
-
-    }
-
-    .rtl {
-        .cdk-overlay-connected-position-bounding-box {
-            left: 85px;
         }
     }
 
