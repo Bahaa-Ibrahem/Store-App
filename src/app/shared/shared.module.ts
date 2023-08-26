@@ -5,7 +5,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TranslateModule } from '@ngx-translate/core';
 import { NgSelectModule } from '@ng-select/ng-select';
 
-import { ClickOutSideDirective } from './directives/clickOutSide/click-out-side.directive';
 import { RtlDirective } from './directives/rtl/rtl.directive';
 import { SpecificLanguageValidatiorDirective } from './directives/validators/specific-language-validator/specific-language-validatior.directive';
 
@@ -16,18 +15,21 @@ import { LoadingComponent } from './components/loading/loading.component';
 import { InputComponent } from './components/input/input.component';
 import { TableComponent } from './components/table/table.component';
 import { ConfirmDialogComponent } from './components/confirm-dialog/confirm-dialog.component';
+import { AdminDirective } from './directives/secure/admin.directive';
+import { AuthDirective } from './directives/secure/auth.directive';
 
 @NgModule({
   declarations: [
     ValidationHandlerPipe,
-    ClickOutSideDirective,
     RtlDirective,
     SpecificLanguageValidatiorDirective,
     LoadingComponent,
     EmptyScreenComponent,
     InputComponent,
     TableComponent,
-    ConfirmDialogComponent
+    ConfirmDialogComponent,
+    AdminDirective,
+    AuthDirective
   ],
   imports: [
     CommonModule,
@@ -41,7 +43,6 @@ import { ConfirmDialogComponent } from './components/confirm-dialog/confirm-dial
     LoadingComponent,
     EmptyScreenComponent,
     ValidationHandlerPipe,
-    ClickOutSideDirective,
     RtlDirective,
     SpecificLanguageValidatiorDirective,
     FormsModule,
@@ -51,7 +52,9 @@ import { ConfirmDialogComponent } from './components/confirm-dialog/confirm-dial
     MaterialModule,
     InputComponent,
     TableComponent,
-    ConfirmDialogComponent
+    ConfirmDialogComponent,
+    AdminDirective,
+    AuthDirective
   ]
 })
 export class SharedModule { }

@@ -64,6 +64,11 @@ button {
     }
   }
 
+  &.danger {
+    background-color: $danger;
+    color: $white;
+  }
+
   &.defualt {
     background-color: #F3F3F1;
     color: $black;

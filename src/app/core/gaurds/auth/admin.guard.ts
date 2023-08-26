@@ -16,7 +16,8 @@ export class AdminGuard implements CanActivateChild {
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
       const isAuthenticated = this.authService.isAuthenticated();
-      if(isAuthenticated) return true;
+      const isAdmin = this.authService.isAdmin();
+      if(isAuthenticated && isAdmin) return true;
       else {
         this.router.navigate(['/auth/login'], { queryParams: { returnUrl: state.url } });
         return false;

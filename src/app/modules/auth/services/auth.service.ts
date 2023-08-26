@@ -37,4 +37,9 @@ export class AuthService {
     const token = localStorage.getItem('token');
     return token ? true : false;
   }
+
+  isAdmin() {
+    const isAdmin = localStorage.getItem('isAdmin');
+    return isAdmin ? true : false;
+  }
 }

@@ -4,7 +4,9 @@
   },
 
   "NAV": {
-    "LOGIN": "Login"
+    "LOGIN": "Login",
+    "CATEGORIES": "Categories",
+    "PRODUCTS": "Products"
   },
 
   "PRODUCTS": {

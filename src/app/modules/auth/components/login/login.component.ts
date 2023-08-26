@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../../services/auth.service';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -9,12 +9,19 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent {
+  returnUrl: string;
+
   loginForm: FormGroup = this.formBuilder.group({
     username: ['', Validators.required],
-    password: ['', Validators.required]
-  });;
+    password: ['', Validators.required],
+    isAdmin: [false]
+  });
 
-  constructor(private formBuilder: FormBuilder, private authService: AuthService, private router: Router) { }
+  constructor(private formBuilder: FormBuilder, private authService: AuthService, private router: Router, private route: ActivatedRoute) {
+    route.queryParams.subscribe((params: Params) => {
+      this.returnUrl = params['returnUrl'];
+    })
+  }
 
   ngOnInit() {
 
@@ -26,7 +33,8 @@ export class LoginComponent {
       .then(res=>res.json())
       .then(json=> {
         localStorage.setItem("token", json.token);
-        this.router.navigate(["/catogries"]);
+        if(this.loginForm.get('isAdmin')?.value == true) localStorage.setItem("isAdmin", '1');
+        this.router.navigate([this.returnUrl || '/catogries']);
       })
     }
   }

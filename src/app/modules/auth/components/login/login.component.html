@@ -23,9 +23,10 @@
         [placeholder]="'Password...'"></app-input>
       </div>
 
+      <mat-checkbox class="mt-3" formControlName="isAdmin">Admin</mat-checkbox>
+
       <div class="d-flex justify-content-between mt-4">
-        <span class="font-14 text-main">Forgot password?</span>
-        <button class="main-btn main font-15 border-radius-25 px-4" type="submit" [disabled]="!loginForm.valid">
+        <button class="main-btn main font-15 border-radius-25 px-4 w-100" type="submit" [disabled]="!loginForm.valid">
           LOGIN
         </button>
       </div>

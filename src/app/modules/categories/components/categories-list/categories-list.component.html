@@ -1,1 +1,18 @@
-<p>categories-list works!</p>
+<div class="container my-3">
+  <div class="input-group mb-3">
+    <ng-select
+      [items]="categories"
+      (change)="onChangeCategory($event)"
+      placeholder="Select Category">
+    </ng-select>
+  </div>
+
+  <div class="row">
+    <div *ngFor="let product of products" class="col-lg-3 mb-5">
+      <app-category-card [product]="product"></app-category-card>
+    </div>
+  </div>
+
+  <app-empty [imageName]="'stc'" *ngIf="!products.length" [text]="'There is no Data yet'"></app-empty>
+
+</div>

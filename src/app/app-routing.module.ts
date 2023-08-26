@@ -7,14 +7,13 @@ import { AdminGuard } from './core/gaurds/auth/admin.guard';
 const routes: Routes = [
   { path: '', redirectTo: '/catogries', pathMatch: 'full' },
   {
+    path: 'auth',
+    loadChildren: () => import('./modules/auth/auth.module').then(m => m.AuthModule)
+  },
+  {
     path: '',
     component: LayoutComponent,
     children: [
-      {
-        path: 'auth',
-        loadChildren: () => import('./modules/auth/auth.module').then(m => m.AuthModule)
-      },
-
       {
         path: 'catogries',
         canActivate: [AuthGuard],

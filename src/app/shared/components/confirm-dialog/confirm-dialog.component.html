@@ -2,9 +2,9 @@
   <h2 class="font-20 font-weight-700 regular text-dark mb-4">{{data?.msg}}</h2>
 </mat-dialog-content>
 
-<mat-dialog-actions class="px-4 py-3 d-flex justify-content-between">
+<mat-dialog-actions class="px-4 py-3 d-flex justify-content-around">
   <button mat-dialog-close class="btn main-btn defualt border-radius-8 font-12 font-weight-700 me-2 px-5">
     Cancel</button>
-  <button [mat-dialog-close]="true" type="submit" class="btn main-btn main border-radius-8 font-12 font-weight-700 px-5">
+  <button [mat-dialog-close]="true" type="submit" class="btn main-btn danger border-radius-8 font-12 font-weight-700 px-5">
     {{data?.confirmText}}</button>
 </mat-dialog-actions>
