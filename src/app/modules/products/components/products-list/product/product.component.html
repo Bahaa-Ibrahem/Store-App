@@ -1,0 +1,57 @@
+<div class="container my-3">
+  <form [formGroup]="productForm" (ngSubmit)="onSubmit()">
+    <div class="row mt-3">
+      <div class="col-lg-6 mb-3">
+        <label class="form-label"> Title </label>
+        <app-input
+        [formGroup]="productForm"
+        controlName="title"
+        [placeholder]="'title'"
+        ></app-input>
+      </div>
+
+      <div class="col-lg-6 mb-3">
+        <label class="form-label"> Category </label>
+        <app-input
+        [formGroup]="productForm"
+        controlName="category"
+        [placeholder]="'category'"
+        ></app-input>
+      </div>
+
+      <div class="col-lg-6 mb-3">
+        <label class="form-label"> price </label>
+        <app-input
+        [formGroup]="productForm"
+        controlName="price"
+        [placeholder]="'price'"
+        ></app-input>
+      </div>
+
+      <div class="col-lg-6 mb-3">
+        <label class="form-label"> Image Url </label>
+        <app-input
+        [formGroup]="productForm"
+        controlName="image"
+        [placeholder]="'image url'"
+        ></app-input>
+      </div>
+
+      <div class="col-lg-12 mb-3">
+        <label class="form-label"> Description </label>
+        <app-input
+        [formGroup]="productForm"
+        controlName="description"
+        [placeholder]="'description'"
+        [type]="'textarea'"
+        ></app-input>
+      </div>
+
+      <div class="buttons pt-3 d-flex justify-content-end mt-4">
+        <button [routerLink]="['/products']" class="main-btn defualt border-radius-8 font-12 font-weight-700 px-5 m-inline-end-3">Cancle</button>
+        <button type="submit" class="main-btn main border-radius-8 font-12 px-5 font-weight-700">Submit</button>
+    </div>
+
+    </div>
+  </form>
+</div>

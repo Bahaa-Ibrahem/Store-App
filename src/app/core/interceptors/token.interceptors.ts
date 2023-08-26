@@ -18,6 +18,7 @@ export class TokenInterceptor implements HttpInterceptor {
   constructor(private loadingService: LoadingService, private router: Router, private alertService: AlertService) { }
 
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
+    debugger
 
     this.token = localStorage.getItem('token');
 
@@ -31,14 +32,12 @@ export class TokenInterceptor implements HttpInterceptor {
       }
     });
 
-    if (request.url.includes('hostAPI')) {
       this.loadingService.setLoading(true, request.url);
       return next.handle(request).pipe(
         catchError((error: HttpErrorResponse) => {
           if (error && error.status === 401) {
             localStorage.removeItem('token');
-            window.open(environment.production ?  `FE_URL` : `FE_URL}`, '_self');
-
+            this.router.navigateByUrl('/auth/login');
             return throwError(error);
           } else {
             if (error instanceof HttpErrorResponse) {
@@ -58,8 +57,5 @@ export class TokenInterceptor implements HttpInterceptor {
         }),
         finalize(() => this.loadingService.setLoading(false, request.url))
       );
-    } else {
-      return next.handle(request);
-    }
   }
 }

@@ -15,6 +15,7 @@ import { EmptyScreenComponent } from './components/empty-screen/empty-screen.com
 import { LoadingComponent } from './components/loading/loading.component';
 import { InputComponent } from './components/input/input.component';
 import { TableComponent } from './components/table/table.component';
+import { ConfirmDialogComponent } from './components/confirm-dialog/confirm-dialog.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { TableComponent } from './components/table/table.component';
     LoadingComponent,
     EmptyScreenComponent,
     InputComponent,
-    TableComponent
+    TableComponent,
+    ConfirmDialogComponent
   ],
   imports: [
     CommonModule,
@@ -48,7 +50,8 @@ import { TableComponent } from './components/table/table.component';
     TranslateModule,
     MaterialModule,
     InputComponent,
-    TableComponent
+    TableComponent,
+    ConfirmDialogComponent
   ]
 })
 export class SharedModule { }

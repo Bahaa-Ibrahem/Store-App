@@ -5,6 +5,9 @@ import { Observable, map, startWith } from 'rxjs';
 import { Actions } from 'src/app/core/enums/actions/actions';
 import { Columns } from 'src/app/core/interfaces/table.interface';
 import { ProductService } from '../../services/product.service';
+import { LoadingService } from 'src/app/core/services/loading/loading.service';
+import { ConfirmDialogComponent } from 'src/app/shared/components/confirm-dialog/confirm-dialog.component';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-products-list',
@@ -29,7 +32,7 @@ export class ProductsListComponent {
     image: string,
     rating: {count: number, rate: number}}[] = [];
 
-  constructor(private router: Router, private productService: ProductService) {}
+  constructor(private router: Router, private productService: ProductService, private dialog: MatDialog) {}
 
   ngOnInit(): void {
     this.getAllProducts();
@@ -103,13 +106,35 @@ export class ProductsListComponent {
   }
 
   onAction(action: any) {
-    if(action.actionType == Actions.VIEW_EDIT) {
-      this.router.navigate([`/asset/view/${action.row.assetNumber}`], { queryParams: { page: 'registration' } });
+    if(action.actionType == Actions.EDIT) {
+      this.router.navigate([`/products/edit/${action.row.id}`]);
+    } else if(action.actionType == Actions.DELETE) {
+      this.deleteProduct(action.row.id);
     }
-   }
+  }
+
+  deleteProduct(id: number) {
+    const dialogRef = this.dialog.open(ConfirmDialogComponent, {
+      data: { id: id, confirmText: "Delete", msg: "Are you sure you want delete this Product" },
+      panelClass: 'sm'
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      if(result) {
+        this.delete(id);
+      }
+    });
+  }
+
+  delete(id: number) {
+    this.productService.deleteProduct(id)
+    .then(res => res.json())
+    .then(json => {
+      this.getAllProducts();
+    });
+  }
 
   onPageChanged(event: any) {
-    console.log(event)
     this.pageInfo = {
       pageNum: event.pageIndex,
       pageSize: event.pageSize

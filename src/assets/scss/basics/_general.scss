@@ -14,10 +14,6 @@ h1, h2, h3, h4, h5, h6 {
 
 body {
   text-align: start;
-
-  .cdk-global-overlay-wrapper {
-    direction: ltr !important;
-  }
 }
 
 [dir=rtl] * {
@@ -31,5 +27,9 @@ body {
 
   .mat-mdc-paginator-page-size-select {
     width: 70px !important;
+  }
+
+  .mat-mdc-paginator-range-label {
+    direction: initial !important;
   }
 }

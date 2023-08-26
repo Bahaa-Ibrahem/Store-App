@@ -3,6 +3,15 @@
     "HOME_PAGE": "Home Page"
   },
 
+  "NAV": {
+    "LOGIN": "Login"
+  },
+
+  "PRODUCTS": {
+    "ADD_PRODUCT": "Add Product",
+    "EDIT_PRODUCT": "Edit Product"
+  },
+
   "ERRORS": {
     "404": "Oops!! Page Not Found"
   },

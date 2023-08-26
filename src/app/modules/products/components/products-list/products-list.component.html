@@ -1,4 +1,6 @@
 <div class="container mt-5 py-3">
+  <button [routerLink]="['/products/add']" class="main-btn main font-15 border-radius-4 px-4 justify-content-end mb-3">{{'PRODUCTS.ADD_PRODUCT' | translate}}</button>
+
   <div *ngIf="rows.length">
     <app-table (action)="onAction($event)" [columns]="columns" [rows]="rows" [bg_white]="true" [totalCount]="totalCount" (pageChanged)="onPageChanged($event)"></app-table>
   </div>

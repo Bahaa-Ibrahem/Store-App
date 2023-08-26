@@ -15,9 +15,6 @@
       [attr.maxlength]="maxlength"
       onkeypress="return event.keyCode != 13;"
     />
-    <div class="input-group-append percentage" *ngIf="isPercentage">
-      <span class="input-group-text" irsRtl id="basic-addon2">%</span>
-    </div>
   </div>
 </div>
 <div *ngIf="type === 'textarea'" [formGroup]="formGroup" ngClass="{{className}}">
