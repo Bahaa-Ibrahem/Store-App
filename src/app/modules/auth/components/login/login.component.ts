@@ -26,7 +26,7 @@ export class LoginComponent {
       .then(res=>res.json())
       .then(json=> {
         localStorage.setItem("token", json.token);
-        this.router.navigate(["/user"]);
+        this.router.navigate(["/catogries"]);
       })
     }
   }

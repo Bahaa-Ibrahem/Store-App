@@ -23,3 +23,13 @@ body {
 [dir=rtl] * {
   direction: rtl;
 }
+
+
+// pagination
+.mat-mdc-paginator-container {
+  justify-content: center !important;
+
+  .mat-mdc-paginator-page-size-select {
+    width: 70px !important;
+  }
+}

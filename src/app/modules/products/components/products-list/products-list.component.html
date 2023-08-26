@@ -1,0 +1,6 @@
+<div class="container mt-5 py-3">
+  <div *ngIf="rows.length">
+    <app-table (action)="onAction($event)" [columns]="columns" [rows]="rows" [bg_white]="true" [totalCount]="totalCount" (pageChanged)="onPageChanged($event)"></app-table>
+  </div>
+  <app-empty [imageName]="'stc'" *ngIf="!rows.length" [text]="'There is no Data yet'"></app-empty>
+</div>

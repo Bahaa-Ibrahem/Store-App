@@ -14,6 +14,7 @@ import { ValidationHandlerPipe } from './pipes/validation-handler.pipe';
 import { EmptyScreenComponent } from './components/empty-screen/empty-screen.component';
 import { LoadingComponent } from './components/loading/loading.component';
 import { InputComponent } from './components/input/input.component';
+import { TableComponent } from './components/table/table.component';
 
 @NgModule({
   declarations: [
@@ -23,8 +24,8 @@ import { InputComponent } from './components/input/input.component';
     SpecificLanguageValidatiorDirective,
     LoadingComponent,
     EmptyScreenComponent,
-    InputComponent
-
+    InputComponent,
+    TableComponent
   ],
   imports: [
     CommonModule,
@@ -46,7 +47,8 @@ import { InputComponent } from './components/input/input.component';
     ReactiveFormsModule,
     TranslateModule,
     MaterialModule,
-    InputComponent
+    InputComponent,
+    TableComponent
   ]
 })
 export class SharedModule { }

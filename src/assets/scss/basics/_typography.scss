@@ -22,6 +22,18 @@ $font-light: "STC Light", sans-serif;
 $font-regular: "STC Regular", sans-serif;
 $font-bold: "STC Bold", sans-serif;
 
+.font-light {
+  font-family: $font-light !important;
+}
+
+.font-regular {
+  font-family: $font-regular !important;
+}
+
+.font-bold {
+  font-family: $font-bold !important;
+}
+
 .font-8 {
   font-size: .5rem !important;
 }

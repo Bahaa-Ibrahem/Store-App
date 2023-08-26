@@ -1,0 +1,206 @@
+@import "../../../../assets/scss/style.scss";
+
+::ng-deep .table-wrapper {
+  width: 370px;
+  overflow: auto;
+
+  @include small-screen {
+    width: auto;
+    overflow: unset;
+  }
+
+  &.cursor-pointer {
+    .mat-mdc-table {
+      .mat-mdc-row {
+        cursor: pointer;
+      }
+    }
+  }
+
+  .mdc-data-table__cell, .mdc-data-table__header-cell {
+    padding: 0 10px 0 10px;
+  }
+
+  .mat-mdc-table {
+    box-shadow: none;
+    border: 2px solid rgba(79, 0, 140, 0.08);
+
+    @include small-screen {
+      width: 100% !important;
+    }
+
+    .mat-mdc-header-row {
+      background: linear-gradient(to right, #1BCED8, #4F008C);
+      padding: 0 0 3px 0;
+
+      .mat-mdc-header-cell {
+        background: #F9F9FA;
+      }
+    }
+
+    &.bg_white {
+      .mat-mdc-header-row {
+        border-top: 0px solid #dcdcdc;
+
+        .mat-mdc-header-cell {
+          background: #F9F9FA;
+        }
+      }
+
+      .mat-mdc-row {
+        min-height: 54px;
+        background-color: #ffffff;
+        border-bottom-color: $light;
+
+        &.selected, &:hover {
+          background-color: #F9F9FA;
+        }
+      }
+    }
+
+    &.spacing {
+      .mat-mdc-header-row {
+        background-color: $white;
+        border-top: 0px solid #dcdcdc;
+        border-bottom-width: 0;
+        // display: none;
+      }
+
+      .mat-mdc-row {
+        background: $white;
+        margin-block: 10px;
+
+        border-bottom-width: 1px;
+        border-bottom-color: $light-border;
+        border-top-width: 1px;
+        border-top-color: $light-border;
+        border-left-width: 1px;
+        border-left-color: $light-border;
+        border-right-width: 1px;
+        border-right-color: $light-border;
+        border-radius: 10px;
+      }
+    }
+
+    .mat-mdc-row {
+      background: #f7f8f8;
+      border-bottom-color: $light;
+
+      &.selected, &:hover {
+        background-color: #f3f3f1;
+      }
+
+      .mat-mdc-cell {
+        &.mat-column-state, &.mat-column-status, &.mat-column-poNumber  {
+          span {
+            padding: 10px;
+            min-width: 94px;
+            text-align: center !important;
+          }
+        }
+      }
+    }
+
+    .mat-mdc-header-row,
+    .mat-mdc-row {
+      .mat-mdc-header-cell {
+        min-width: min-content;
+      }
+
+      .mat-mdc-header-cell,
+      .mat-mdc-cell {
+        flex: 0 0 140px;
+
+        @include small-screen {
+          flex: 1;
+        }
+
+        &.mat-column-index,
+        &.mat-column-checkbox {
+          flex: 0 0 60px;
+        }
+
+        &.mat-column-role {
+          .actions {
+            span {
+              span {
+                &.admin {
+                  color: #00C48C !important;
+                  background: #e0f8f1;
+                }
+
+                &.manager {
+                  color: #FF375E !important;
+                  background: #ffe7ec;
+                }
+
+                &.employee {
+                  color: #4F008C!important;
+                  background: #eae0f1;
+                }
+              }
+            }
+          }
+        }
+
+        &.mat-column-image {
+          img {
+            width: 40px;
+            height: 40px;
+          }
+        }
+
+        &.default {
+          max-width: 170px;
+        }
+
+        &.x-small {
+          max-width: 50px;
+          min-width: 50px;
+        }
+
+        &.small {
+          max-width: 110px;
+          min-width: 96px;
+        }
+
+        &.medium {
+          max-width: 290px;
+          min-width: 135px;
+        }
+
+        &.large {
+          max-width: 350px;
+          min-width: 250px;
+        }
+
+        &.x-large {
+          // max-width: 550px;
+          min-width: 350px;
+        }
+
+        &.max {
+          @include small-screen {
+            max-width: 110px;
+          }
+
+          @include normal-screen {
+            max-width: 175px;
+          }
+
+          @include xlarge-screen {
+            max-width: 190px;
+          }
+
+          @include xxlarge-screen {
+            max-width: 300px;
+          }
+
+          @include xxxlarge-screen {
+            max-width: 450px;
+          }
+        }
+      }
+    }
+  }
+}
